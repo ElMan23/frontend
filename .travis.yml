@@ -7,3 +7,17 @@ before_install:
 
 script:
     - docker run -e CI=true eliamanara/frontend npm run test
+
+# Example for deploying to AWS EB
+# deploy:
+#     edge: true
+#     provider: elasticbeanstalk
+#     region: "us-west-2"
+#     app: "frontend"
+#     env: "Frontend-env"
+#     bucket_name: "elasticbeanstalk-us-west-2-306476627547"
+#     bucket_path: "frontend"
+#     on:
+#         branch: master
+#     access_key_id: $AWS_ACCESS_KEY
+#     secret_access_key: $AWS_SECRET_KEY
