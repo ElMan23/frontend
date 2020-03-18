@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t eliamanara/frontend -f Dockerfile.dev .
+
+script:
+    - docker run -e CI=true eliamanara/frontend npm run test
